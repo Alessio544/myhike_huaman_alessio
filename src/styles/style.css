@@ -1,1 +1,18 @@
+.forest-bg {
+    background: #2e7c3b;
+}
 
+.off-green{
+    background: #439c4a;
+}
+
+.hero-section {
+    min-height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.color-card {
+    background: #bebebe;
+}

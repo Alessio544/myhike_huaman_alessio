@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>My BCIT Project</title>
+    <meta name="comp1800 template" content="My 1800 App">
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Web Components for shared navbar and footer layout -->
+    <script type="module" src="/src/components/site-navbar.js"></script> 
+    <script type="module" src="/src/components/site-footer.js"></script> 
+</head>
+
+<body>
+    <!------------------------------>
+    <!-- Your HTML Layout go here -->
+    <!------------------------------>
+
+    <!-- our own navbar goes here -->
+    <site-navbar></site-navbar>
+    
+    <!-- Main content goes here -->
+        <div class="container px-4 py-5 my-5 hero-section forest-bg shadow-lg rounded" style="max-width: 880px;">
+            <!-- Alerts -->
+            <div id="authAlert" class="alert alert-danger d-none" role="alert"></div>
+            <img class="d-block mx-auto mb-4 rounded" src="/images/hiking-icon.avif" alt="" width="124" height="124">
+            <!-- Login -->
+            <div id="loginView">
+                <h3 class="mb-3 text-center">Login</h3>
+                <form id="loginForm" style = "max-width: 320px;" class="mx-auto" novalidate>
+                    <div class="mb-3 shadow">
+                        <input type="email" id="loginEmail" class="form-control" placeholder="Email" required />
+                    </div>
+                    <div class="mb-3 shadow">
+                        <input type="password" id="loginPassword" class="form-control" placeholder="Password" required />
+                    </div>
+                    <button type="submit shadow" class="btn off-green w-100 shadow">Login</button>
+                </form>
+                <small class="d-block mt-3 text-center">
+                    Don’t have an account?
+                    <a href="#" id="toSignup">Sign up</a>
+                </small>
+            </div>
+        
+            <!-- Signup -->
+            <div id="signupView" class="d-none">
+                <h3 class="mb-3 text-center">Sign Up</h3>
+                <form id="signupForm" style = "max-width: 320px;" class="mx-auto" novalidate>
+                    <div class="mb-3 shadow">
+                        <input type="text" id="signupName" class="form-control" placeholder="First and Last Name"
+                            aria-label="Full name" required />
+                    </div>
+                    <div class="mb-3 shadow">
+                        <input type="email" id="signupEmail" class="form-control" placeholder="Email" required />
+                    </div>
+                    <div class="mb-3 shadow">
+                        <input type="password" id="signupPassword" class="form-control" placeholder="Password" required />
+                    </div>
+                    <button type="submit" class="btn off-green w-100 shadow">Create Account</button>
+                </form>
+                <small class="d-block mt-3 text-center">
+                    Already have an account?
+                    <a href="#" id="toLogin">Login</a>
+                </small>
+            </div>
+        </div>
+    <!-- our own footer goes here -->
+    <site-footer></site-footer>
+    
+    <!---------------------------------------------->
+    <!-- Your own JavaScript scripts go here      -->
+    <!---------------------------------------------->
+
+    <script type="module" src="/src/app.js"></script>
+
+    <!---------------------------------------------->
+    <!-- Your own JavaScript scripts go here      -->
+    <!---------------------------------------------->
+
+    <!-- Firebase and authentication related scripts -->
+    <!-- The order of loading matters -->
+    <script type="module" src="/src/firebaseConfig.js"></script>
+    <script type="module" src="/src/authentication.js"></script>
+    <script type="module" src="/src/loginSignup.js"></script>
+</body>
+
+</html>
